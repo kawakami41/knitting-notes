@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>編み物ノート</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>編み物ノート</h1>
+        </header>
+
+        <main>
+            <!-- プロジェクト一覧 -->
+            <section class="projects-section">
+                <div class="section-header">
+                    <h2>プロジェクト</h2>
+                    <button id="addProjectBtn" class="btn-primary">新規プロジェクト追加</button>
+                </div>
+                <div id="projectsList" class="projects-list">
+                    <!-- プロジェクトカードがここに表示されます -->
+                </div>
+                <div id="emptyState" class="empty-state">
+                    <p>まだプロジェクトがありません</p>
+                    <p>新規プロジェクトを追加してみましょう</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- モーダル（プロジェクト追加/編集用） -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">新規プロジェクト</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <form id="projectForm">
+                <div class="form-group">
+                    <label for="projectName">プロジェクト名 *</label>
+                    <input type="text" id="projectName" required placeholder="例: 赤いマフラー">
+                </div>
+
+                <div class="form-group">
+                    <label for="projectType">作品タイプ *</label>
+                    <select id="projectType" required>
+                        <option value="">選択してください</option>
+                        <option value="crochet">かぎ針編み</option>
+                        <option value="knitting">棒編み</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="needleSize">針のサイズ</label>
+                    <input type="text" id="needleSize" placeholder="例: 5mm">
+                </div>
+
+                <div class="form-group">
+                    <label for="yarnName">毛糸の名前</label>
+                    <input type="text" id="yarnName" placeholder="例: メリノウール 並太">
+                </div>
+
+                <div class="form-group">
+                    <label for="yarnColor">毛糸の色</label>
+                    <input type="text" id="yarnColor" placeholder="例: 赤">
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">メモ</label>
+                    <textarea id="notes" rows="4" placeholder="プロジェクトに関する自由なメモ"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancelBtn">キャンセル</button>
+                    <button type="submit" class="btn-primary">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

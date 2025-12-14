@@ -1,0 +1,6 @@
+# Firebase設定（APIキーを含むため非公開）
+firebase-config.js
+
+# その他
+node_modules/
+.DS_Store
