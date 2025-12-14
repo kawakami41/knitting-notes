@@ -4,3 +4,5 @@ firebase-config.js
 # その他
 node_modules/
 .DS_Store
+github_API.txt
+Firebase.txt
