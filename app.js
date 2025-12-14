@@ -66,6 +66,7 @@ class KnittingApp {
         document.getElementById('yarnName').value = project.yarnName || '';
         document.getElementById('yarnColor').value = project.yarnColor || '';
         document.getElementById('notes').value = project.notes || '';
+        document.getElementById('youtubeUrl').value = project.youtubeUrl || '';
     }
 
     handleSubmit(e) {
@@ -79,6 +80,7 @@ class KnittingApp {
             yarnName: document.getElementById('yarnName').value.trim(),
             yarnColor: document.getElementById('yarnColor').value.trim(),
             notes: document.getElementById('notes').value.trim(),
+            youtubeUrl: document.getElementById('youtubeUrl').value.trim(),
             createdAt: this.editingProjectId
                 ? this.projects.find(p => p.id === this.editingProjectId).createdAt
                 : new Date().toISOString()
@@ -129,6 +131,9 @@ class KnittingApp {
         }
         if (project.notes) {
             infoHtml += `<p><strong>メモ:</strong> ${project.notes}</p>`;
+        }
+        if (project.youtubeUrl) {
+            infoHtml += `<p><strong>📺 参考動画:</strong> <a href="${project.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="youtube-link">YouTubeで見る</a></p>`;
         }
 
         card.innerHTML = `
