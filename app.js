@@ -20,11 +20,16 @@ class KnittingApp {
         this.modalTitle = document.getElementById('modalTitle');
 
         // 画像関連の要素
-        this.mainImageInput = document.getElementById('mainImage');
-        this.mainImageBtn = document.getElementById('mainImageBtn');
+        this.mainImageCameraInput = document.getElementById('mainImageCamera');
+        this.mainImageGalleryInput = document.getElementById('mainImageGallery');
+        this.mainImageCameraBtn = document.getElementById('mainImageCameraBtn');
+        this.mainImageGalleryBtn = document.getElementById('mainImageGalleryBtn');
         this.mainImagePreview = document.getElementById('mainImagePreview');
-        this.yarnImageInput = document.getElementById('yarnImage');
-        this.yarnImageBtn = document.getElementById('yarnImageBtn');
+
+        this.yarnImageCameraInput = document.getElementById('yarnImageCamera');
+        this.yarnImageGalleryInput = document.getElementById('yarnImageGallery');
+        this.yarnImageCameraBtn = document.getElementById('yarnImageCameraBtn');
+        this.yarnImageGalleryBtn = document.getElementById('yarnImageGalleryBtn');
         this.yarnImagePreview = document.getElementById('yarnImagePreview');
     }
 
@@ -41,10 +46,15 @@ class KnittingApp {
         });
 
         // 画像アップロードのイベントリスナー
-        this.mainImageBtn.addEventListener('click', () => this.mainImageInput.click());
-        this.mainImageInput.addEventListener('change', (e) => this.handleImageSelect(e, 'main'));
-        this.yarnImageBtn.addEventListener('click', () => this.yarnImageInput.click());
-        this.yarnImageInput.addEventListener('change', (e) => this.handleImageSelect(e, 'yarn'));
+        this.mainImageCameraBtn.addEventListener('click', () => this.mainImageCameraInput.click());
+        this.mainImageGalleryBtn.addEventListener('click', () => this.mainImageGalleryInput.click());
+        this.mainImageCameraInput.addEventListener('change', (e) => this.handleImageSelect(e, 'main'));
+        this.mainImageGalleryInput.addEventListener('change', (e) => this.handleImageSelect(e, 'main'));
+
+        this.yarnImageCameraBtn.addEventListener('click', () => this.yarnImageCameraInput.click());
+        this.yarnImageGalleryBtn.addEventListener('click', () => this.yarnImageGalleryInput.click());
+        this.yarnImageCameraInput.addEventListener('change', (e) => this.handleImageSelect(e, 'yarn'));
+        this.yarnImageGalleryInput.addEventListener('change', (e) => this.handleImageSelect(e, 'yarn'));
     }
 
     loadProjects() {
@@ -77,6 +87,10 @@ class KnittingApp {
         this.currentYarnImage = null;
         this.mainImagePreview.innerHTML = '';
         this.yarnImagePreview.innerHTML = '';
+        this.mainImageCameraInput.value = '';
+        this.mainImageGalleryInput.value = '';
+        this.yarnImageCameraInput.value = '';
+        this.yarnImageGalleryInput.value = '';
     }
 
     fillForm(project) {
@@ -232,11 +246,13 @@ class KnittingApp {
         if (type === 'main') {
             this.currentMainImage = null;
             this.mainImagePreview.innerHTML = '';
-            this.mainImageInput.value = '';
+            this.mainImageCameraInput.value = '';
+            this.mainImageGalleryInput.value = '';
         } else if (type === 'yarn') {
             this.currentYarnImage = null;
             this.yarnImagePreview.innerHTML = '';
-            this.yarnImageInput.value = '';
+            this.yarnImageCameraInput.value = '';
+            this.yarnImageGalleryInput.value = '';
         }
     }
 

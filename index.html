@@ -80,8 +80,12 @@
                 <div class="form-group">
                     <label>📷 作品写真</label>
                     <div class="image-upload-container">
-                        <input type="file" id="mainImage" accept="image/*" capture="environment" style="display: none;">
-                        <button type="button" class="btn-upload" id="mainImageBtn">写真を選択</button>
+                        <input type="file" id="mainImageCamera" accept="image/*" capture="environment" style="display: none;">
+                        <input type="file" id="mainImageGallery" accept="image/*" style="display: none;">
+                        <div class="btn-group">
+                            <button type="button" class="btn-upload btn-camera" id="mainImageCameraBtn">📷 カメラで撮影</button>
+                            <button type="button" class="btn-upload btn-gallery" id="mainImageGalleryBtn">🖼️ ギャラリーから選択</button>
+                        </div>
                         <div id="mainImagePreview" class="image-preview"></div>
                     </div>
                 </div>
@@ -89,8 +93,12 @@
                 <div class="form-group">
                     <label>🧵 毛糸写真（任意）</label>
                     <div class="image-upload-container">
-                        <input type="file" id="yarnImage" accept="image/*" capture="environment" style="display: none;">
-                        <button type="button" class="btn-upload" id="yarnImageBtn">写真を選択</button>
+                        <input type="file" id="yarnImageCamera" accept="image/*" capture="environment" style="display: none;">
+                        <input type="file" id="yarnImageGallery" accept="image/*" style="display: none;">
+                        <div class="btn-group">
+                            <button type="button" class="btn-upload btn-camera" id="yarnImageCameraBtn">📷 カメラで撮影</button>
+                            <button type="button" class="btn-upload btn-gallery" id="yarnImageGalleryBtn">🖼️ ギャラリーから選択</button>
+                        </div>
                         <div id="yarnImagePreview" class="image-preview"></div>
                     </div>
                 </div>
