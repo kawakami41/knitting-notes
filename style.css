@@ -422,6 +422,41 @@ form {
     border-top: 1px solid #f0f0f0;
 }
 
+/* トーストメッセージ */
+.toast-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    max-width: 400px;
+    word-wrap: break-word;
+}
+
+.toast-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast-success {
+    background-color: #4CAF50;
+}
+
+.toast-error {
+    background-color: #f44336;
+}
+
+.toast-info {
+    background-color: #2196F3;
+}
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.5rem;
@@ -461,5 +496,11 @@ form {
 
     .preview-wrapper {
         max-width: 100%;
+    }
+
+    .toast-message {
+        left: 20px;
+        right: 20px;
+        max-width: none;
     }
 }
